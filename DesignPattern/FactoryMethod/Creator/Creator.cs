@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FactoryMethod.Class
 {
-    abstract class Creator
+    public abstract class Creator
     {
         public abstract IProduct FactoryMethod();
 
