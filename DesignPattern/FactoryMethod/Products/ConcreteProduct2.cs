@@ -4,7 +4,20 @@ using System.Text;
 
 namespace FactoryMethod.Products
 {
-    class ConcreteProduct2
+    public class ConcreteProduct2 : IProduct
     {
+        private ProductTypes _productType;
+
+        public ConcreteProduct2()
+        {
+            Process();
+        }
+
+        public void Process()
+        {
+            _productType = ProductTypes.ValueProduct2;
+        }
+
+        public ProductTypes GetValue() => _productType;
     }
 }

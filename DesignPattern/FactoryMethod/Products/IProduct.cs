@@ -6,5 +6,8 @@ namespace FactoryMethod.Products
 {
     interface IProduct
     {
+        void Process();
+
+        ProductTypes GetValue();
     }
 }
