@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FactoryMethod.Products
 {
-    interface IProduct
+    public interface IProduct
     {
         void Process();
 
