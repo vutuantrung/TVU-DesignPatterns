@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FactoryAbstract\FactoryAbstract.csproj" />
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
   </ItemGroup>
 
