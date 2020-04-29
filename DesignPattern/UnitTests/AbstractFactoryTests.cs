@@ -14,40 +14,37 @@ namespace UnitTests
         public void get_product_A()
         {
             {
-                ConcreteFactory1 Factory = new ConcreteFactory1();
+                IAbstractProductA prod = GetProduct( factory: new ConcreteFactory1() );
 
-                IAbstractProductA Product = Factory.CreateProductA();
-
-                Assert.That( Product.GetValue() == ProductsType.ProductA1 );
+                Assert.That( prod.GetValue() == ProductsType.ProductA1 );
             }
 
             {
-                ConcreteFactory2 Factory = new ConcreteFactory2();
+                IAbstractProductA prod = GetProduct( factory: new ConcreteFactory2() );
 
-                IAbstractProductA Product = Factory.CreateProductA();
-
-                Assert.That( Product.GetValue() == ProductsType.ProductA2 );
+                Assert.That( prod.GetValue() == ProductsType.ProductA2 );
             }
+
+            IAbstractProductA GetProduct( IAbstractFactory factory ) => factory.CreateProductA();
         }
 
         [Test]
         public void get_product_B()
         {
             {
-                ConcreteFactory1 Factory = new ConcreteFactory1();
 
-                IAbstractProductB Product = Factory.CreateProductB();
+                IAbstractProductB prod = GetProduct( factory: new ConcreteFactory1() );
 
-                Assert.That( Product.GetValue() == ProductsType.ProductB1 );
+                Assert.That( prod.GetValue() == ProductsType.ProductB1 );
             }
 
             {
-                ConcreteFactory2 Factory = new ConcreteFactory2();
+                IAbstractProductB prod = GetProduct( factory: new ConcreteFactory1() );
 
-                IAbstractProductB Product = Factory.CreateProductB();
-
-                Assert.That( Product.GetValue() == ProductsType.ProductB2 );
+                Assert.That( prod.GetValue() == ProductsType.ProductB2 );
             }
+
+            IAbstractProductB GetProduct( IAbstractFactory factory ) => factory.CreateProductB();
         }
 
     }
