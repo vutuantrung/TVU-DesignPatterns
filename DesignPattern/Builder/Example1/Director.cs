@@ -14,12 +14,12 @@ namespace Builder.Example1
             set { _builder = value; }
         }
 
-        public void BuildMinimalViableProduct()
+        public void BuildMinimalParts()
         {
             _builder.BuilderPartA();
         }
 
-        public void BuildFullFeatureProduct()
+        public void BuildEssentialParts()
         {
             _builder.BuilderPartA();
             _builder.BuilderPartB();
