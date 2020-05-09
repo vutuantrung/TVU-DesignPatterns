@@ -39,7 +39,7 @@ namespace UnitTests
             }
 
             {
-                IAbstractProductB prod = GetProduct( factory: new ConcreteFactory1() );
+                IAbstractProductB prod = GetProduct( factory: new ConcreteFactory2() );
 
                 Assert.That( prod.GetValue() == ProductsType.ProductB2 );
             }
