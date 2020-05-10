@@ -16,13 +16,13 @@ namespace UnitTests
             {
                 IAbstractProductA prod = GetProduct( factory: new ConcreteFactory1() );
 
-                Assert.That( prod.GetValue() == ProductsType.ProductA1 );
+                Assert.That( prod.GetValue() == ProductEnum.ProductA1 );
             }
 
             {
                 IAbstractProductA prod = GetProduct( factory: new ConcreteFactory2() );
 
-                Assert.That( prod.GetValue() == ProductsType.ProductA2 );
+                Assert.That( prod.GetValue() == ProductEnum.ProductA2 );
             }
 
             IAbstractProductA GetProduct( IAbstractFactory factory ) => factory.CreateProductA();
@@ -35,13 +35,13 @@ namespace UnitTests
 
                 IAbstractProductB prod = GetProduct( factory: new ConcreteFactory1() );
 
-                Assert.That( prod.GetValue() == ProductsType.ProductB1 );
+                Assert.That( prod.GetValue() == ProductEnum.ProductB1 );
             }
 
             {
                 IAbstractProductB prod = GetProduct( factory: new ConcreteFactory2() );
 
-                Assert.That( prod.GetValue() == ProductsType.ProductB2 );
+                Assert.That( prod.GetValue() == ProductEnum.ProductB2 );
             }
 
             IAbstractProductB GetProduct( IAbstractFactory factory ) => factory.CreateProductB();
