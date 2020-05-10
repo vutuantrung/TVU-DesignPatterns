@@ -1,6 +1,6 @@
 ﻿namespace FactoryMethod.Products
 {
-    public enum ProductTypes
+    public enum ProductEnum
     {
         ValueProduct1,
         ValueProduct2

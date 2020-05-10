@@ -11,6 +11,6 @@ namespace FactoryAbstract.Products
             return 5;
         }
 
-        public ProductsType GetValue() => ProductsType.ProductA1;
+        public ProductEnum GetValue() => ProductEnum.ProductA1;
     }
 }
