@@ -67,7 +67,12 @@ namespace Prototype.PersonService
             _person.PersonJob = service.GetPersonJob();
         }
 
-        public void SetPersonRelationship(EnumRelationship relationship )
+        public void SetPersonRelationship( PersonRelationship relationship )
+        {
+            SetPersonRelationship( relationship.Relationship );
+        }
+
+        public void SetPersonRelationship( EnumRelationship relationship )
         {
             PersonRelationshipService service = new PersonRelationshipService();
             service.Reset();
