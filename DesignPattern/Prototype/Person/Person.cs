@@ -38,6 +38,7 @@ namespace Prototype.PersonSpace
             director.Person = clone;
             director.SetPersonAdress( this.PersonAdress );
             director.SetPersonJob( this.PersonJob );
+            director.SetPersonRelationship( this.RelationShip );
 
             return clone;
         }
