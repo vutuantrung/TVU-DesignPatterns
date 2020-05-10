@@ -17,7 +17,7 @@ namespace UnitTests
 
             var product = creator.FactoryMethod();
 
-            Assert.That( product.GetValue() == ProductTypes.ValueProduct1 );
+            Assert.That( product.GetValue() == ProductEnum.ValueProduct1 );
         }
 
         [Test]
@@ -27,7 +27,7 @@ namespace UnitTests
 
             var product = creator.FactoryMethod();
 
-            Assert.That( product.GetValue() == ProductTypes.ValueProduct2 );
+            Assert.That( product.GetValue() == ProductEnum.ValueProduct2 );
         }
     }
 }

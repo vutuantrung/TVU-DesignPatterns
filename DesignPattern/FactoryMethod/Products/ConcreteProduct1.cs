@@ -6,7 +6,7 @@ namespace FactoryMethod.Products
 {
     public class ConcreteProduct1 : IProduct
     {
-        private ProductTypes _productType;
+        private ProductEnum _productType;
 
         public ConcreteProduct1()
         {
@@ -15,9 +15,9 @@ namespace FactoryMethod.Products
 
         public void Process()
         {
-            _productType = ProductTypes.ValueProduct1;
+            _productType = ProductEnum.ValueProduct1;
         }
 
-        public ProductTypes GetValue() => _productType;
+        public ProductEnum GetValue() => _productType;
     }
 }
