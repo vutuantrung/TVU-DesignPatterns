@@ -4,24 +4,29 @@ using System.Text;
 
 namespace Singleton.NaiveSingleton
 {
-    public class Singleton
+    public class SingletonNaive : ISingletonDemo
     {
         // The Singleton's constructor should always be private to prevent direct construction calls with the `new` operator.
-        private Singleton()
+        private SingletonNaive()
         {
 
         }
 
-        private static Singleton _instance;
+        private static SingletonNaive _instance;
 
-        public static Singleton GetInstance()
+        public static SingletonNaive GetInstance()
         {
             if ( _instance == null )
             {
-                _instance = new Singleton();
+                _instance = new SingletonNaive();
             }
 
             return _instance;
+        }
+
+        public void PrintInformation( string message )
+        {
+            Console.WriteLine( message );
         }
     }
 }
