@@ -1,0 +1,22 @@
+﻿What are the Advantages of using the Singleton Design Pattern in C#?
+	The Advantages of using the Singleton Design Pattern in C# are as follows.
+		1.	The first and most important advantage of using the singleton design pattern in C# is that it takes care of concurrent access to the shared resource. 
+			That means if we are sharing a resource with multiple clients simultaneously, then concurrent access to that resource is well managed by the singleton design pattern.
+		2.	It can be lazy-loaded and also has Static Initialization.
+		3.	To share common data i.e. master data and configuration data which is not changed that frequently in an application.
+			In that case, we need to cache the objects in memory.
+		4.	As it provides a single global point of access to a particular instance, so it is easy to maintain.
+		5.	To reduce the overhead of instantiating a heavy object again and again.
+
+	Implementation Guidelines of Singleton Design Pattern in C#:
+	The following are the implementation guidelines for using the singleton design pattern in C#.
+		1.	You need to declare a constructor that should be private and parameterless.
+			This is required because it is not allowed the class to be instantiated from outside the class.
+			It only instantiates from within the class.
+		2.	The class should be declared as sealed which will ensure that it cannot be inherited.
+			This is going to be useful when you are dealing with the nested class.
+			We will discuss this scenario with an example in our upcoming article.
+		3.	You need to create a private static variable that is going to hold a reference to the single created instance of the class if any.
+		4.	You also need to create a public static property/method which will return the single created instance of the singleton class.
+			This method or property first check if an instance of the singleton class is available or not.
+			If the singleton instance is available, then it returns that singleton instance otherwise it will create an instance and then return that instance.
