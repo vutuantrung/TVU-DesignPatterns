@@ -20,6 +20,7 @@
     <ProjectReference Include="..\FactoryAbstract\FactoryAbstract.csproj" />
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
     <ProjectReference Include="..\Prototype\Prototype.csproj" />
+    <ProjectReference Include="..\Singleton\Singleton.csproj" />
   </ItemGroup>
 
 </Project>
