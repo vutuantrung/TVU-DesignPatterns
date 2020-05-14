@@ -15,6 +15,36 @@ namespace UnitTests
     class SingletonTests
     {
         [Test]
+        public void test_singleton_eager_loading()
+        {
+            var watch = Stopwatch.StartNew();
+
+            PrintPersonInformation( SingletonEagerLoading.GetInstance, Person.Teacher );
+            PrintPersonInformation( SingletonEagerLoading.GetInstance, Person.Student );
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine( $"Elapsed time: { elapsedMs }." );
+        }
+
+
+        [Test]
+        public void test_singleton_naive()
+        {
+            var watch = Stopwatch.StartNew();
+
+            PrintPersonInformation( SingletonNaive.GetInstance, Person.Teacher );
+            PrintPersonInformation( SingletonNaive.GetInstance, Person.Student );
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine( $"Elapsed time: { elapsedMs }." );
+        }
+
+
+        [Test]
         public void test_singleton_double_check_lock()
         {
             var watch = Stopwatch.StartNew();
