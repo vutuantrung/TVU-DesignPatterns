@@ -1,4 +1,9 @@
-﻿What are the Advantages of using the Singleton Design Pattern in C#?
+﻿What is Singleton Design Pattern in C#?
+	We need to use the Singleton Design Pattern in C# when we need to ensures that only one instance of a particular class is going to be created and then provide simple global access to that instance for the entire application.
+
+
+
+What are the Advantages of using the Singleton Design Pattern in C#?
 	The Advantages of using the Singleton Design Pattern in C# are as follows.
 		1.	The first and most important advantage of using the singleton design pattern in C# is that it takes care of concurrent access to the shared resource. 
 			That means if we are sharing a resource with multiple clients simultaneously, then concurrent access to that resource is well managed by the singleton design pattern.
