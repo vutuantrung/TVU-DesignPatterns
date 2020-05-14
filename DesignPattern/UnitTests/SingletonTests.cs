@@ -94,6 +94,22 @@ namespace UnitTests
             Console.WriteLine( $"Elapsed time: { elapsedMs }." );
         }
 
+        [Test]
+        public void test_singleton_lazy_loading()
+        {
+            var watch = Stopwatch.StartNew();
+
+            Parallel.Invoke(
+                () => PrintPersonInformation( SingletonLazyLoading.GetInstance, Person.Teacher ),
+                () => PrintPersonInformation( SingletonLazyLoading.GetInstance, Person.Student )
+                );
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            Console.WriteLine( $"Elapsed time: { elapsedMs }." );
+        }
+
 
         static void PrintPersonInformation( ISingletonDemo singleton, Person person )
         {
