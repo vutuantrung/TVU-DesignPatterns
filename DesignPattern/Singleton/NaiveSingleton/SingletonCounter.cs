@@ -11,6 +11,7 @@ namespace Singleton.NaiveSingleton
 
         private static SingletonCounter instance = null;
 
+        // Using Lazy Initialization
         public static SingletonCounter GetInstance
         {
             get
