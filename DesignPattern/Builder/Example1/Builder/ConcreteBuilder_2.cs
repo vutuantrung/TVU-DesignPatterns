@@ -16,22 +16,22 @@ namespace Builder.Example1.Builder
 
         public void BuilderPartA()
         {
-            _product.Add( EnumProduct_2.PartA );
+            _product.Add( ProductType2.PartA );
         }
 
         public void BuilderPartB()
         {
-            _product.Add( EnumProduct_2.PartB );
+            _product.Add( ProductType2.PartB );
         }
 
         public void BuilderPartC()
         {
-            _product.Add( EnumProduct_2.PartC );
+            _product.Add( ProductType2.PartC );
         }
 
         public void BuilderPartD()
         {
-            _product.Add( EnumProduct_2.PartD );
+            _product.Add( ProductType2.PartD );
         }
 
         public void Reset()
