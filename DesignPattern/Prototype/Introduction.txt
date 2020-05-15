@@ -1,1 +1,10 @@
-﻿
+﻿Understanding Shallow Copy in C#:
+
+_It will create the new object from the existing object and then copying the value type fields of the current object to the new object.
+_In the case of reference type, it will only copy the reference, not the referred object itself. Therefore the original and clone refer to the same object in case of reference type.
+
+Understanding Deep Copy in C#:
+
+_It will create the new object from the existing object and then copying the fields of the current object to the newly created object.
+_If the field is a value type, then a bit-by-bit copy of the field will be performed.
+_If the field is a reference type, then a new copy of the referred object is created.
