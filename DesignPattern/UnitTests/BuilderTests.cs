@@ -1,6 +1,10 @@
 ﻿using Builder.Example1;
 using Builder.Example1.Builder;
 using Builder.Example1.Products;
+using Builder.Example2;
+using Builder.Example2.Builder;
+using Builder.Example2.Enum;
+using Builder.Example2.Product;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -26,7 +30,7 @@ namespace UnitTests
             Product product = builder.GetProduct();
 
             Assert.That( product.Count == 1 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ));
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
             #endregion
 
             #region Build full feature
@@ -37,9 +41,9 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 3 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartC ) );
             #endregion
 
             #region Build full feature for concrete
@@ -54,11 +58,11 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 5 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartC ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartE ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartE ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartD ) );
             #endregion
         }
 
@@ -77,7 +81,7 @@ namespace UnitTests
             Product product = builder.GetProduct();
 
             Assert.That( product.Count == 1 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
             #endregion
 
             #region Build full feature
@@ -88,10 +92,10 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 3 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartC ) );
-            Assert.That( !product.ListPart.Contains( EnumProduct_2.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartC ) );
+            Assert.That( !product.ListPart.Contains( ProductType2.PartD ) );
             #endregion
 
             #region Build full feature for concrete
@@ -105,10 +109,65 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 4 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartC ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartD ) );
+            #endregion
+        }
+
+        [Test]
+        public void builder_test_3()
+        {
+            Report report;
+            ReportDirector director = new ReportDirector();
+
+            #region Excel
+            {
+                ExcelReportBuilder builder = new ExcelReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.Excel );
+                Assert.That( report.ReportHeader == HeaderType.ExcelHeader );
+                Assert.That( report.ReportContent == ContentType.ExcelContent );
+                Assert.That( report.ReportFooter == FooterType.ExcelFooter );
+            }
+            #endregion
+
+            #region PDF
+            {
+                PDFReportBuilder builder = new PDFReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.PDF );
+                Assert.That( report.ReportHeader == HeaderType.PDFHeader );
+                Assert.That( report.ReportContent == ContentType.PDFContent );
+                Assert.That( report.ReportFooter == FooterType.PDFFooter );
+            }
+            #endregion
+
+            #region Word
+            {
+                WordReportBuilder builder = new WordReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.Word );
+                Assert.That( report.ReportHeader == HeaderType.WordHeader );
+                Assert.That( report.ReportContent == ContentType.WordContent );
+                Assert.That( report.ReportFooter == FooterType.WordFooter );
+            }
+            #endregion
+
+            #region Powerpoint
+            {
+                PowerPointReportBuilder builder = new PowerPointReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.PowerPoint );
+                Assert.That( report.ReportHeader == HeaderType.PowerPointHeader );
+                Assert.That( report.ReportContent == ContentType.PowerPointContent );
+                Assert.That( report.ReportFooter == FooterType.PowerPointFooter );
+            }
             #endregion
         }
     }

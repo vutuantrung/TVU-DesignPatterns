@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Builder.Example1.Products
 {
-    public enum EnumProduct_1
+    public enum ProductType1
     {
         PartA,
         PartB,
@@ -13,7 +13,7 @@ namespace Builder.Example1.Products
         PartE
     }
 
-    public enum EnumProduct_2
+    public enum ProductType2
     {
         PartA,
         PartB,
