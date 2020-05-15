@@ -4,24 +4,86 @@
 
 
 What are the Advantages of using the Singleton Design Pattern in C#?
-	The Advantages of using the Singleton Design Pattern in C# are as follows.
+	The Advantages of using the Singleton Design Pattern in C# are as follows:
+
 		1.	The first and most important advantage of using the singleton design pattern in C# is that it takes care of concurrent access to the shared resource. 
 			That means if we are sharing a resource with multiple clients simultaneously, then concurrent access to that resource is well managed by the singleton design pattern.
+
 		2.	It can be lazy-loaded and also has Static Initialization.
+
 		3.	To share common data i.e. master data and configuration data which is not changed that frequently in an application.
 			In that case, we need to cache the objects in memory.
+
 		4.	As it provides a single global point of access to a particular instance, so it is easy to maintain.
+
 		5.	To reduce the overhead of instantiating a heavy object again and again.
 
 	Implementation Guidelines of Singleton Design Pattern in C#:
+
 	The following are the implementation guidelines for using the singleton design pattern in C#.
 		1.	You need to declare a constructor that should be private and parameterless.
 			This is required because it is not allowed the class to be instantiated from outside the class.
 			It only instantiates from within the class.
+
 		2.	The class should be declared as sealed which will ensure that it cannot be inherited.
 			This is going to be useful when you are dealing with the nested class.
 			We will discuss this scenario with an example in our upcoming article.
+
 		3.	You need to create a private static variable that is going to hold a reference to the single created instance of the class if any.
+
 		4.	You also need to create a public static property/method which will return the single created instance of the singleton class.
 			This method or property first check if an instance of the singleton class is available or not.
 			If the singleton instance is available, then it returns that singleton instance otherwise it will create an instance and then return that instance.
+
+
+
+Static class vs Singleton:
+
+Similarities ?
+
+	1.	Both static class and singleton class can have only one instance of a copy that is available in memory throughout the whole application.
+		They both are used for holding the global state of an application.
+
+	2.	Both static classes and singleton classes can be implemented as thread-safe.
+
+Differences
+	1.	Static is a language feature whereas Singleton is a design pattern
+
+	2.	We cannot create an instance of a static class in C#.
+		But we can create a single instance of a singleton class and then can reuse that singleton instance.
+
+	3.	When the compiler compiles the static class then internally it treats the static class as an abstract and sealed class.
+		This is the reason why neither we create an instance nor extend a static class in C#.
+
+	4.	The Singleton class constructor is always marked as private.
+		This is the reason why we cannot create an instance from outside the singleton class.
+		It provides either PUBLIC STATIC PROPERTY or a PUBLIC STATIC METHOD whose job is to create the singleton instance only once 
+		and then return that singleton instance each and every time when we called that public static property/method from outside the singleton class.
+
+	5.	A Singleton class can be initialized lazily or can be loaded automatically by CLR (Common Language Runtime) when the program or namespace containing the Singleton class is loaded.
+		A static class is generally initialized when it is first loaded for the first time and it may lead to potential classloader issues.
+
+	6.	It is not possible to pass the static class as a method parameter whereas we can pass the singleton instance as a method parameter in C#.
+
+	7.	In C#, it is possible to implement interfaces, inherit from other classes and allow inheritance with Singleton class.
+		These are not possible with a static class.
+		So the Singleton class is more flexible as compared to static classes.
+
+	8.	We can clone the Singleton class object whereas it is not possible to clone a static class. 
+		It is possible to dispose of the objects of a singleton class whereas it is not possible to dispose of a static class.
+
+	9.	We cannot implement the Dependency Injection design pattern using Static class because the static class is not interface driven.
+
+	10.	Singleton means a single object across the application lifecycle, so the scope is at the application level.
+		As we know the static class does not have any Object pointer, so the scope is at the App Domain level.
+
+Memory Management of Static Class vs Singleton Class in C#:
+	There is a little confusion about the memory management of static vs Singleton class in C#.
+	
+	1.	The most important point that you need to remember is any class whether it is declared itself as static or any member of if it is declared as static then that class or those static members would not be collected by Garbage Collector.
+
+	2.	The Static variables or static classes are not stored in the Stack memory.
+	There is some specific space in Heap memory called High-Frequency Heap where the static classes and static variables are stored.
+	This space is beyond the scope of Garbage Collector and hence, the memory gets released only when the corresponding Process or AppDomain gets unload.
+
+	3.	As the singleton class holds a static reference, so it cannot be collected by the Garbage Collector (GC) and both (Static and Singleton class) get destroyed only when the corresponding Process or AppDomain gets unloads.
