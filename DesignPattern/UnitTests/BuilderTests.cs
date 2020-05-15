@@ -1,6 +1,10 @@
 ﻿using Builder.Example1;
 using Builder.Example1.Builder;
 using Builder.Example1.Products;
+using Builder.Example2;
+using Builder.Example2.Builder;
+using Builder.Example2.Enum;
+using Builder.Example2.Product;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -26,7 +30,7 @@ namespace UnitTests
             Product product = builder.GetProduct();
 
             Assert.That( product.Count == 1 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ));
+            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
             #endregion
 
             #region Build full feature
@@ -109,6 +113,61 @@ namespace UnitTests
             Assert.That( product.ListPart.Contains( EnumProduct_2.PartB ) );
             Assert.That( product.ListPart.Contains( EnumProduct_2.PartC ) );
             Assert.That( product.ListPart.Contains( EnumProduct_2.PartD ) );
+            #endregion
+        }
+
+        [Test]
+        public void builder_test_3()
+        {
+            Report report;
+            ReportDirector director = new ReportDirector();
+
+            #region Excel
+            {
+                ExcelReportBuilder builder = new ExcelReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.Excel );
+                Assert.That( report.ReportHeader == HeaderType.ExcelHeader );
+                Assert.That( report.ReportContent == ContentType.ExcelContent );
+                Assert.That( report.ReportFooter == FooterType.ExcelFooter );
+            }
+            #endregion
+
+            #region PDF
+            {
+                PDFReportBuilder builder = new PDFReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.PDF );
+                Assert.That( report.ReportHeader == HeaderType.PDFHeader );
+                Assert.That( report.ReportContent == ContentType.PDFContent );
+                Assert.That( report.ReportFooter == FooterType.PDFFooter );
+            }
+            #endregion
+
+            #region Word
+            {
+                WordReportBuilder builder = new WordReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.Word );
+                Assert.That( report.ReportHeader == HeaderType.WordHeader );
+                Assert.That( report.ReportContent == ContentType.WordContent );
+                Assert.That( report.ReportFooter == FooterType.WordFooter );
+            }
+            #endregion
+
+            #region Powerpoint
+            {
+                PowerPointReportBuilder builder = new PowerPointReportBuilder();
+                report = director.CreateReport( builder );
+
+                Assert.That( report.ReportType == ReportType.PowerPoint );
+                Assert.That( report.ReportHeader == HeaderType.PowerPointHeader );
+                Assert.That( report.ReportContent == ContentType.PowerPointContent );
+                Assert.That( report.ReportFooter == FooterType.PowerPointFooter );
+            }
             #endregion
         }
     }
