@@ -10,9 +10,14 @@ namespace Prototype.PersonInfo
     {
         public EnumRelationship Relationship { get; set; }
 
-        public PersonRelationship(EnumRelationship relationShip)
+        public PersonRelationship( EnumRelationship relationShip )
         {
             Relationship = relationShip;
+        }
+
+        public PersonRelationship GetClone()
+        {
+            return (PersonRelationship)this.MemberwiseClone();
         }
     }
 }
