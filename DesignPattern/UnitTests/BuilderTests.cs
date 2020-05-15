@@ -30,7 +30,7 @@ namespace UnitTests
             Product product = builder.GetProduct();
 
             Assert.That( product.Count == 1 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
             #endregion
 
             #region Build full feature
@@ -41,9 +41,9 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 3 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartC ) );
             #endregion
 
             #region Build full feature for concrete
@@ -58,11 +58,11 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 5 );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartC ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartE ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_1.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartE ) );
+            Assert.That( product.ListPart.Contains( ProductType1.PartD ) );
             #endregion
         }
 
@@ -81,7 +81,7 @@ namespace UnitTests
             Product product = builder.GetProduct();
 
             Assert.That( product.Count == 1 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
             #endregion
 
             #region Build full feature
@@ -92,10 +92,10 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 3 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartC ) );
-            Assert.That( !product.ListPart.Contains( EnumProduct_2.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartC ) );
+            Assert.That( !product.ListPart.Contains( ProductType2.PartD ) );
             #endregion
 
             #region Build full feature for concrete
@@ -109,10 +109,10 @@ namespace UnitTests
             product = builder.GetProduct();
 
             Assert.That( product.Count == 4 );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartA ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartB ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartC ) );
-            Assert.That( product.ListPart.Contains( EnumProduct_2.PartD ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartA ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartB ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartC ) );
+            Assert.That( product.ListPart.Contains( ProductType2.PartD ) );
             #endregion
         }
 
