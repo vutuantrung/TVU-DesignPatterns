@@ -21,6 +21,7 @@ namespace Prototype.PersonService
             _person = null;
         }
 
+        #region Person Adress
         public void SetPersonAdress( PersonAdress personAdress )
         {
             SetPersonAdress
@@ -36,7 +37,6 @@ namespace Prototype.PersonService
         public void SetPersonAdress( string country, string city, string district, string street, int number )
         {
             PersonAdressService service = new PersonAdressService();
-            service.Reset();
             service.AddCountry( country );
             service.AddCity( city );
             service.AddDistrict( district );
@@ -46,6 +46,16 @@ namespace Prototype.PersonService
             _person.PersonAdress = service.GetAdress();
         }
 
+        public void InitializePersonAdress()
+        {
+            PersonAdressService service = new PersonAdressService();
+            service.Reset();
+            _person.PersonAdress = service.GetAdress();
+        }
+        #endregion
+
+
+        #region Set Person job
         public void SetPersonJob( PersonJob personJob )
         {
             SetPersonJob
@@ -59,7 +69,6 @@ namespace Prototype.PersonService
         public void SetPersonJob( string company, string job, string sector )
         {
             PersonJobService service = new PersonJobService();
-            service.Reset();
             service.AddCompany( company );
             service.AddJob( job );
             service.AddSector( sector );
@@ -67,6 +76,15 @@ namespace Prototype.PersonService
             _person.PersonJob = service.GetPersonJob();
         }
 
+        public void InitializePersonJob()
+        {
+            PersonJobService service = new PersonJobService();
+            service.Reset();
+            _person.PersonJob = service.GetPersonJob();
+        }
+        #endregion
+
+        #region Set person relationship
         public void SetPersonRelationship( PersonRelationship relationship )
         {
             SetPersonRelationship( relationship.Relationship );
@@ -75,10 +93,17 @@ namespace Prototype.PersonService
         public void SetPersonRelationship( EnumRelationship relationship )
         {
             PersonRelationshipService service = new PersonRelationshipService();
-            service.Reset();
             service.SetRelationship( relationship: relationship );
 
             _person.RelationShip = service.GetPersonRelationship();
         }
+
+        public void InitializePersonRelationship()
+        {
+            PersonRelationshipService service = new PersonRelationshipService();
+            service.Reset();
+            _person.RelationShip = service.GetPersonRelationship();
+        }
+        #endregion
     }
 }
