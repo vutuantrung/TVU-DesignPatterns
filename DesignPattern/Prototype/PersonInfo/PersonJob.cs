@@ -11,5 +11,10 @@ namespace Prototype.PersonInfo
         public string Job { get; set; }
 
         public string Sector { get; set; }
+
+        public PersonJob GetClone()
+        {
+            return (PersonJob)this.MemberwiseClone();
+        }
     }
 }
