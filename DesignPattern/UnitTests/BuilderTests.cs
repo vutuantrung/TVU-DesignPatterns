@@ -5,6 +5,10 @@ using Builder.Example2;
 using Builder.Example2.Builder;
 using Builder.Example2.Enum;
 using Builder.Example2.Product;
+using Builder.Example3;
+using Builder.Example3.Builder;
+using Builder.Example3.Enum;
+using Builder.Example3.Product;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -117,7 +121,7 @@ namespace UnitTests
         }
 
         [Test]
-        public void builder_test_3()
+        public void builder_test_report()
         {
             Report report;
             ReportDirector director = new ReportDirector();
@@ -169,6 +173,40 @@ namespace UnitTests
                 Assert.That( report.ReportFooter == FooterType.PowerPointFooter );
             }
             #endregion
+        }
+
+        [Test]
+        public void builder_test_beverage()
+        {
+            BeverageRecipe recipe;
+            BeverageDirector director = new BeverageDirector();
+
+            #region Tea
+            {
+                TeaBeverageBuilder builder = new TeaBeverageBuilder();
+                recipe = director.MakeBeverageRecipe( builder );
+
+                Assert.That( recipe.BeverageType == Beverage.Tea );
+                Assert.That( recipe.Water == 40 );
+                Assert.That( recipe.Milk == 50 );
+                Assert.That( recipe.Sugar == 10 );
+                Assert.That( recipe.PowderQuantity == 15 );
+            }
+            #endregion
+
+            #region Coffee
+            {
+                CoffeeBeverageBuilder builder = new CoffeeBeverageBuilder();
+                recipe = director.MakeBeverageRecipe( builder );
+
+                Assert.That( recipe.BeverageType == Beverage.Coffee );
+                Assert.That( recipe.Water == 50 );
+                Assert.That( recipe.Milk == 60 );
+                Assert.That( recipe.Sugar == 15 );
+                Assert.That( recipe.PowderQuantity == 20 );
+            }
+            #endregion
+
         }
     }
 }
