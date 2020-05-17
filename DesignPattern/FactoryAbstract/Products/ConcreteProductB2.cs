@@ -11,6 +11,6 @@ namespace FactoryAbstract.Products
             return "Serie B2_57204";
         }
 
-        public ProductEnum GetValue() => ProductEnum.ProductB2;
+        public ProductTypes GetValue() => ProductTypes.ProductB2;
     }
 }
