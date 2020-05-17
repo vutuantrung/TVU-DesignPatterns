@@ -6,7 +6,7 @@ namespace FactoryAbstract.Products
 {
     public interface IAbstractProductA
     {
-        ProductEnum GetValue();
+        ProductTypes GetValue();
 
         int GetProductNumber();
     }

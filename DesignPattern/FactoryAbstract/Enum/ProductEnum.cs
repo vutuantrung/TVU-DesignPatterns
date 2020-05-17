@@ -1,6 +1,6 @@
 ﻿namespace FactoryAbstract.Products
 {
-    public enum ProductEnum
+    public enum ProductTypes
     {
         ProductA1,
         ProductA2,
