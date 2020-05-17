@@ -8,6 +8,6 @@ namespace FactoryMethod.Products
     {
         void Process();
 
-        ProductEnum GetValue();
+        ProductTypes GetValue();
     }
 }
