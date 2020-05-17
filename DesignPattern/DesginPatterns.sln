@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prototype", "Prototype\Prot
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "Singleton\Singleton.csproj", "{DBA45550-F99E-4AF1-93A5-9A23B85DE3AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{D66FBE8E-4677-45C2-BA44-3F15758E8160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{D66FBE8E-4677-45C2-BA44-3F15758E8160}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryDesign", "FactoryDesign\FactoryDesign.csproj", "{75926C03-8548-4C2D-B923-88A830AD8DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{D66FBE8E-4677-45C2-BA44-3F15758E8160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D66FBE8E-4677-45C2-BA44-3F15758E8160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D66FBE8E-4677-45C2-BA44-3F15758E8160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75926C03-8548-4C2D-B923-88A830AD8DA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75926C03-8548-4C2D-B923-88A830AD8DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75926C03-8548-4C2D-B923-88A830AD8DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75926C03-8548-4C2D-B923-88A830AD8DA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
