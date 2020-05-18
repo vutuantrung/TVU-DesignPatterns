@@ -1,4 +1,7 @@
-﻿using FactoryAbstract.Factory;
+﻿using AbstractFactory.Zoo.Animal;
+using AbstractFactory.Zoo.Enum;
+using AbstractFactory.Zoo.Factory;
+using FactoryAbstract.Factory;
 using FactoryAbstract.Products;
 using NUnit.Framework;
 using System;
@@ -47,5 +50,38 @@ namespace UnitTests
             IAbstractProductB GetProduct( IAbstractFactory factory ) => factory.CreateProductB();
         }
 
+        [Test]
+        public void test_zoo()
+        {
+            IAnimal animal;
+            AnimalFactory animalFactory = null;
+
+            {
+                animalFactory = AnimalFactory.CreateAnimalFactory( AnimalFactoryType.Land );
+
+                animal = animalFactory.GetAnimal( AnimalType.Cat );
+                Assert.That( animal.Speak() == "Meow Meow Meow" );
+                animal = animalFactory.GetAnimal( AnimalType.Lion );
+                Assert.That( animal.Speak() == "Roar" );
+                animal = animalFactory.GetAnimal( AnimalType.Wolf );
+                Assert.That( animal.Speak() == "Bark bark" );
+
+                Assert.Throws<ArgumentException>( () => animal = animalFactory.GetAnimal( AnimalType.Octopus ) );
+                Assert.Throws<ArgumentException>( () => animal = animalFactory.GetAnimal( AnimalType.Shark ) );
+            }
+
+            {
+                animalFactory = AnimalFactory.CreateAnimalFactory( AnimalFactoryType.Sea );
+
+                animal = animalFactory.GetAnimal( AnimalType.Octopus );
+                Assert.That( animal.Speak() == "SQUAWCK" );
+                animal = animalFactory.GetAnimal( AnimalType.Shark );
+                Assert.That( animal.Speak() == "Cannot Speak" );
+
+                Assert.Throws<ArgumentException>( () => animal = animalFactory.GetAnimal( AnimalType.Cat ) );
+                Assert.Throws<ArgumentException>( () => animal = animalFactory.GetAnimal( AnimalType.Lion ) );
+                Assert.Throws<ArgumentException>( () => animal = animalFactory.GetAnimal( AnimalType.Wolf ) );
+            }
+        }
     }
 }
