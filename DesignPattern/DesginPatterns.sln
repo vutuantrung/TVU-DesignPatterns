@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryMethod", "FactoryMethod\FactoryMethod.csproj", "{6980EB17-2EEB-40FB-95BB-211C4DAB1A42}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryAbstract", "FactoryAbstract\FactoryAbstract.csproj", "{7E361DAF-8C9C-46C7-B5E5-6FCA90663E5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AbstractFactory", "FactoryAbstract\AbstractFactory.csproj", "{7E361DAF-8C9C-46C7-B5E5-6FCA90663E5D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Builder", "Builder\Builder.csproj", "{326DD3ED-AA63-494B-AC4B-9D81AF4EBAA0}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Singleton", "Singleton\Sing
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentInterface", "FluentInterface\FluentInterface.csproj", "{D66FBE8E-4677-45C2-BA44-3F15758E8160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryDesign", "FactoryDesign\FactoryDesign.csproj", "{75926C03-8548-4C2D-B923-88A830AD8DA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryDesign", "FactoryDesign\FactoryDesign.csproj", "{75926C03-8548-4C2D-B923-88A830AD8DA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
