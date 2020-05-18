@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Builder\Builder.csproj" />
-    <ProjectReference Include="..\FactoryAbstract\FactoryAbstract.csproj" />
+    <ProjectReference Include="..\FactoryAbstract\AbstractFactory.csproj" />
     <ProjectReference Include="..\FactoryDesign\FactoryDesign.csproj" />
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
     <ProjectReference Include="..\FluentInterface\FluentInterface.csproj" />
