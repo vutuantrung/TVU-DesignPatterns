@@ -16,7 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Builder\Builder.csproj" />
+    <ProjectReference Include="..\FactoryAbstract\FactoryAbstract.csproj" />
+    <ProjectReference Include="..\FactoryDesign\FactoryDesign.csproj" />
     <ProjectReference Include="..\FactoryMethod\FactoryMethod.csproj" />
+    <ProjectReference Include="..\FluentInterface\FluentInterface.csproj" />
+    <ProjectReference Include="..\Prototype\Prototype.csproj" />
+    <ProjectReference Include="..\Singleton\Singleton.csproj" />
   </ItemGroup>
 
 </Project>
