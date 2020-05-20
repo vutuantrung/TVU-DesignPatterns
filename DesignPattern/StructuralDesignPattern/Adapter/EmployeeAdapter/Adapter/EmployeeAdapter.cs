@@ -7,6 +7,8 @@ namespace Adapter.EmployeeAdapter.Adapter
 {
     public class EmployeeAdapter : ITarget
     {
+        List<Employee> listEmployee = new List<Employee>();
+
         ThirdPartyBillingSystem thirdPartyBillingSystem = new ThirdPartyBillingSystem();
 
         public void ProcessCompanySalary( string[,] employeesArray )
@@ -17,13 +19,13 @@ namespace Adapter.EmployeeAdapter.Adapter
             string workingHours = string.Empty;
             string salary = string.Empty;
 
-            List<Employee> listEmployee = new List<Employee>();
+            List<Employee> listEmployeeLocal = new List<Employee>();
 
             for ( int i = 0; i < employeesArray.GetLength( 0 ); i++ )
             {
                 int j = 0;
 
-                listEmployee.Add(
+                listEmployeeLocal.Add(
                     new Employee
                     (
                         id: Convert.ToInt32( employeesArray[i, j++] ),
@@ -36,7 +38,11 @@ namespace Adapter.EmployeeAdapter.Adapter
 
             Console.WriteLine( "Adapter converted Array of Employee to List of Employee" );
 
-            thirdPartyBillingSystem.ProcessSalary( listEmployee );
+            thirdPartyBillingSystem.ProcessSalary( listEmployeeLocal );
+
+            listEmployee = listEmployeeLocal;
         }
+
+        public List<Employee> GetListEmployee() => listEmployee;
     }
 }

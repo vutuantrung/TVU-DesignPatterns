@@ -13,9 +13,15 @@ namespace Adapter.EmployeeAdapter.Adapter
         {
             foreach ( Employee employee in listEmployee )
             {
-                employee.PaySalary = employee.WorkingHours <= 20.5
-                    ? PaySalary.NotPaid 
-                    : PaySalary.Paid;
+                if ( employee.WorkingHours <= 20.5 )
+                {
+                    employee.PaySalary = PaySalary.NotPaid;
+                    employee.Salary = 0;
+                }
+                else
+                {
+                    employee.PaySalary = PaySalary.Paid;
+                }
             }
         }
     }
