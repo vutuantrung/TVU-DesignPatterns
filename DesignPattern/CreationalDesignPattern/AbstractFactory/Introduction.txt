@@ -1,0 +1,8 @@
+﻿What is Abstract Factory Design Pattern ?
+
+According to Gang of Four Definition: 
+“The Abstract Factory Design Pattern provides a way to encapsulate a group of individual factories that have a common theme without specifying their concrete classes“.
+
+In simple words we can say, the Abstract Factory is a super factory that creates other factories.
+This Factory is also called Factory of Factories.
+End.
