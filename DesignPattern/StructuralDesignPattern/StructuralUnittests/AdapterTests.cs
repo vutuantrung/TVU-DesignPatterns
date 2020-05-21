@@ -91,5 +91,21 @@ namespace StructuralUnittests
             }
 
         }
+
+        [Test]
+        public void test_translator()
+        {
+            {
+                FrenchAdaptee adaptee = new FrenchAdaptee();
+                ITargetVietnamese client = new TranslatorVFAdapter( adaptee );
+                client.Send( "Xin chao" );
+            }
+
+            {
+                JapaneseAdaptee adaptee = new JapaneseAdaptee();
+                ITargetVietnamese client = new TranslatorVPAdapter( adaptee );
+                client.Send( "Xin chao" );
+            }
+        }
     }
 }
