@@ -6,14 +6,18 @@ namespace Facade.System.Class
 {
     public class SubSystem1
     {
-        public string Operation1()
+        public bool IsSubSystemReady { get; set; }
+
+        public bool IsSubSystemWorking { get; set; }
+
+        public void Operation1()
         {
-            return "Subsystem1: Ready!\n";
+            IsSubSystemReady = true;
         }
 
-        public string OperationN()
+        public void OperationN()
         {
-            return "Subsystem1: Go!\n";
+            IsSubSystemWorking = true;
         }
     }
 }
