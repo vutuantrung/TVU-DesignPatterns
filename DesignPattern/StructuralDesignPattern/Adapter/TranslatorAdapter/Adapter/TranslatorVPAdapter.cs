@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Adapter.TranslatorAdapter.Adapter
 {
-    class TranslatorVPAdapter : ITargetVietnamese
+    public class TranslatorVPAdapter : ITargetVietnamese
     {
         private JapaneseAdaptee _adaptee;
 
