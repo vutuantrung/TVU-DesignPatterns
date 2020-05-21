@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Facade\Facade.csproj" />
     <ProjectReference Include="..\Adapter\Adapter.csproj" />
   </ItemGroup>
 
