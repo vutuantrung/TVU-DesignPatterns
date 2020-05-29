@@ -8,8 +8,8 @@ namespace Adapter.SpeakerTranslatorAdapter.Adapter
 {
     public class Translator : ITarget
     {
-        private EnglishMan englishMan = new EnglishMan();
-        private FrenchMan frenchMan = new FrenchMan();
+        private IEnglishSpeakerAdapter englishMan = new EnglishMan();
+        private IFrenchSpeakerAdapter frenchMan = new FrenchMan();
 
         public string TranslateAndTellToOtherPerson( string words, Nationality language )
         {
