@@ -1,4 +1,5 @@
-﻿The Decorator Design Pattern allows us to dynamically add new functionalities to an existing object without altering or modifying its structure and this design pattern acts as a wrapper to the existing class.
+﻿The Decorator Design Pattern allows us to dynamically add new functionalities to an existing object without altering or modifying its structure 
+and this design pattern acts as a wrapper to the existing class.
 
 This design pattern dynamically changes the functionality of an object at runtime without impacting the existing functionality of the objects.
 In short, this decorator design pattern adds additional functionalities to the object by wrapping it.

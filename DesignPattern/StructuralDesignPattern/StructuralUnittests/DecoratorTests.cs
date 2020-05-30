@@ -1,6 +1,8 @@
 ﻿using Decorator.Car.Class;
 using Decorator.Car.Decorator;
 using Decorator.Car.Enum;
+using Decorator.ComponentDemo.Class;
+using Decorator.ComponentDemo.Decorator;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -41,6 +43,21 @@ namespace StructuralUnittests
                 Assert.That( merCar.CarGlass == "4 MRF wheels" );
 
                 Assert.That( merCar.Engine == EngineType.Petrol );
+            }
+        }
+
+        [Test]
+        public void test_component_demo()
+        {
+            {
+                ConcreteComponentA componentA = new ConcreteComponentA();
+                ConcreteComponentB componentB = new ConcreteComponentB();
+
+                ConcreteDecoratorA decoratorA = new ConcreteDecoratorA( componentA );
+                decoratorA.Operation();
+
+                decoratorA.SetComponent( componentB );
+                decoratorA.Operation();
             }
         }
     }
