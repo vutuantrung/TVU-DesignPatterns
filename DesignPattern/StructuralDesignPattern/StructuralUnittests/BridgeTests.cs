@@ -1,6 +1,9 @@
-﻿using Bridge.Enum;
+﻿using Bridge.Demo.AbstractionClass;
+using Bridge.Demo.ImplementationClass;
+using Bridge.Enum;
 using Bridge.TV;
 using Bridge.TVRemote;
+using Decorator.ComponentDemo.Class;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -43,6 +46,36 @@ namespace StructuralUnittests
 
                 Assert.That( sonyTV.GetChannel() != 56 );
 
+            }
+        }
+
+        [Test]
+        public void Test_demo()
+        {
+            {
+                IImplementation implementationA = new ConcreteImplementationA();
+
+                Abstraction abstraction = new Abstraction( implementationA );
+
+                abstraction.Operation();
+
+                Assert.That( abstraction.GetData() == "ImplementationA" );
+            }
+
+            {
+                IImplementation implementationA = new ConcreteImplementationA();
+                IImplementation implementationB = new ConcreteImplementationB();
+
+                Abstraction abstraction = new Abstraction( implementationB );
+                abstraction.Operation();
+
+                Assert.That( abstraction.GetData() == "ImplementationB" );
+
+
+                abstraction = new Abstraction( implementationA );
+                abstraction.Operation();
+
+                Assert.That( abstraction.GetData() == "ImplementationA" );
             }
         }
     }
