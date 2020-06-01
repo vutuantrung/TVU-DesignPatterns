@@ -140,7 +140,7 @@ namespace StructuralUnittests
                 Assert.That( ex.Message, Is.EqualTo( "Invalid message. (Parameter 'message')" ) );
             }
 
-            // Long message
+            // Short message
             {
                 var ex = Assert.Throws<ArgumentException>( () => { longMessage.SendMessage( shortM ); } );
                 Assert.That( ex.Message, Is.EqualTo( "Invalid message: message is too short. (Parameter 'message')" ) );
