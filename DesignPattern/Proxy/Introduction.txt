@@ -32,3 +32,9 @@ _The Proxy server has two main objectives. They are as follows:
 	2.	Filter Requests:
 		The Proxy servers can also be used to filter the incoming requests.
 		For example, a company might use the proxy server to prevent its employees from accessing a specific set of websites such as Facebook, Twitter, etc.
+
+
+Source: refactoring.guru
+
+Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object.
+A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object.

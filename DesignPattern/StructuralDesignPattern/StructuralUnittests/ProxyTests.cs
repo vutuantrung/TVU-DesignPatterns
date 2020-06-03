@@ -2,6 +2,9 @@
 using Proxy.Buisiness.Class;
 using Proxy.Buisiness.Enum;
 using Proxy.Buisiness.Proxy;
+using Proxy.Demo;
+using Proxy.Demo.Class;
+using Proxy.Demo.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,7 +12,7 @@ using System.Text;
 namespace StructuralUnittests
 {
     [TestFixture]
-    class Proxy
+    class ProxyTests
     {
         [Test]
         public void Test_business()
@@ -44,7 +47,7 @@ namespace StructuralUnittests
 
                 Assert.That( person.Username, Is.EqualTo( "userTest" ) );
                 Assert.That( person.Password, Is.EqualTo( "password" ) );
-                Assert.That( person.GetPackage().CanRead && person.GetPackage().CanWrite );
+                Assert.That( !person.GetPackage().CanRead && person.GetPackage().CanWrite );
             }
 
             {
@@ -55,7 +58,7 @@ namespace StructuralUnittests
 
                 Assert.That( person.Username, Is.EqualTo( "userTest" ) );
                 Assert.That( person.Password, Is.EqualTo( "password" ) );
-                Assert.That( person.GetPackage().CanRead );
+                Assert.That( person.GetPackage().CanRead && !person.GetPackage().CanWrite );
             }
 
             {
@@ -66,8 +69,21 @@ namespace StructuralUnittests
 
                 Assert.That( person.Username, Is.EqualTo( "userTest" ) );
                 Assert.That( person.Password, Is.EqualTo( "password" ) );
-                Assert.That( !person.GetPackage().CanRead  );
+                Assert.That( person.GetPackage(), Is.EqualTo( null ) );
             }
+        }
+
+        [Test]
+        public void Test_demo()
+        {
+            // Test iwth real subject
+            DemoClient client = new DemoClient();
+            RealSubject realSubject = new RealSubject();
+            client.ClientCode( realSubject );
+
+            // Test with proxy
+            DemoProxy proxy = new DemoProxy( realSubject );
+            client.ClientCode( proxy );
         }
     }
 }
