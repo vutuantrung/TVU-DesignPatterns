@@ -1,0 +1,34 @@
+﻿The Proxy Design Pattern provides a surrogate (act on behalf of other) or placeholder for another object to control the access to it.
+Proxy means ‘in place of‘ or ‘representing‘ or ‘on behalf of‘.
+
+In the simplest form, we can define a proxy is a class functioning as an interface to something else.
+The proxy could interface to anything such as a network connection, a large object in memory,
+a file or some other resources that are expensive or impossible to duplicate.
+
+We can also say that the Proxy is the object which is being called by the client to access the real object behind the scene.
+That means, In Proxy Design Pattern, a class represents the functionality of another class.
+
+Types of Proxies:
+	1. Virtual Proxy: A virtual proxy is a place holder for “expensive to create” objects.
+	   The real object is only created when a client first requests or accesses the object.
+	2. Remote Proxy: A remote proxy provides local representation for an object that resides in a different address space.
+	3. Protection Proxy: A protection proxy control access to a sensitive master object.
+	   The surrogate (thay thế) object checks that the caller has the access permissions required prior to forwarding the request.
+
+Why do we need Proxy Design Pattern in C#?
+
+_Let us understand the need for the Proxy Design Pattern with the example of Proxy Server.
+_A server that sits between a client application such as a web browser and a real server is called a Proxy Server.
+This Proxy server intercepts (chặn) all the incoming requests for the real server to see if it can fulfill the requests by itself.
+If not then it will forward the requests to the real server.
+_The Proxy server has two main objectives. They are as follows:
+	1.	Improve Performance:
+		The Proxy servers can drastically (mạnh mẽ, quyết liệt) improve the performance of the application.
+		This is because it saves the results of a request for a certain period of time.
+		For example, let say we have two users X and Y and they want to access a particular resource through the proxy server.
+		First, user X request a particular resource (let say a list of employees) and cache that resource for a certain amount of time.
+		Later, the user Y also request for the same resource, then the Proxy server instead of forwarding that request to the actual server (which is a time-consuming operation), it can simply return the data from the cache.
+		Since the client and the proxy server are in the same network, so it is going to be a much faster operation.
+	2.	Filter Requests:
+		The Proxy servers can also be used to filter the incoming requests.
+		For example, a company might use the proxy server to prevent its employees from accessing a specific set of websites such as Facebook, Twitter, etc.
