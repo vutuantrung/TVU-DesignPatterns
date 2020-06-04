@@ -5,6 +5,8 @@ using Proxy.Buisiness.Proxy;
 using Proxy.Demo;
 using Proxy.Demo.Class;
 using Proxy.Demo.Proxy;
+using Proxy.VirtualProxy.Class;
+using Proxy.VirtualProxy.Proxy;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -84,6 +86,29 @@ namespace StructuralUnittests
             // Test with proxy
             DemoProxy proxy = new DemoProxy( realSubject );
             client.ClientCode( proxy );
+        }
+
+        [Test]
+        public void Test_virtual_proxy()
+        {
+            IImage image1 = new ProxyImage( "Tiger image" );
+
+            Console.WriteLine( "Image is loaded for the first time:" );
+            image1.DisplayImage();// load necessary
+
+            Console.WriteLine( "Image is loaded for the second time:" );
+            image1.DisplayImage();// load unnecessary
+
+            Console.WriteLine( "Image is loaded for the thrird time:" );
+            image1.DisplayImage();// load unnecessary
+
+            IImage Image2 = new ProxyImage( "Lion Image" );
+
+            Console.WriteLine( "Image2 calling DisplayImage first time :" );
+            Image2.DisplayImage(); // loading necessary
+
+            Console.WriteLine( "Image2 calling DisplayImage second time :" );
+            Image2.DisplayImage(); // loading unnecessary
         }
     }
 }
