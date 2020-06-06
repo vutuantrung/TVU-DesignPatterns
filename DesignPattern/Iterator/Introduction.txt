@@ -1,0 +1,12 @@
+﻿The Iterator Design Pattern in C# allows sequential access of elements without exposing the inside logic.
+That means using the Iterator Design Pattern we can access the elements of a collection object in a sequential manner without any need to know its internal representations.
+
+The collections (List, Array List, Array, etc.) are nothing but a container that contains lots of objects.
+In object-oriented programming, the iterator pattern is a design pattern in which an iterator is used to traverse a container and access the elements of the container.
+
+The Data structure of List will be different from the Data Structure of ArrayList and the same in the case of Array.
+The storing mechanism of List will be different from the storing mechanism of Array as well as different from ArrayList.
+
+We use iterators quite frequently in our daily life.
+For example remote control of the TV.
+Any remote control that we use, just pick up the TV remote control and start pressing Up and Down or Forward and Back keys to iterate through the channels.
