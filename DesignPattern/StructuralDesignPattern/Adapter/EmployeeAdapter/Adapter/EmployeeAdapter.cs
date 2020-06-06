@@ -13,12 +13,6 @@ namespace Adapter.EmployeeAdapter.Adapter
 
         public void ProcessCompanySalary( string[,] employeesArray )
         {
-            string id = string.Empty;
-            string name = string.Empty;
-            string designation = string.Empty;
-            string workingHours = string.Empty;
-            string salary = string.Empty;
-
             List<Employee> listEmployeeLocal = new List<Employee>();
 
             for ( int i = 0; i < employeesArray.GetLength( 0 ); i++ )

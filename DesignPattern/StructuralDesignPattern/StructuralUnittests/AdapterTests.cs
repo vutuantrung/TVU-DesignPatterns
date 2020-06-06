@@ -2,6 +2,9 @@
 using Adapter.EmployeeAdapter.Class;
 using Adapter.EmployeeAdapter.Enum;
 using Adapter.EmployeeAdapter.Progress;
+using Adapter.SpeakerTranslatorAdapter.Adaptee;
+using Adapter.TranslatorAdapter.Adaptee;
+using Adapter.TranslatorAdapter.Adapter;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -90,6 +93,40 @@ namespace StructuralUnittests
                 Assert.That( employee == null );
             }
 
+        }
+
+        [Test]
+        public void test_translator()
+        {
+            {
+                FrenchAdaptee adaptee = new FrenchAdaptee();
+                ITargetVietnamese client = new TranslatorVFAdapter( adaptee );
+                client.Send( "Xin chao" );
+            }
+
+            {
+                JapaneseAdaptee adaptee = new JapaneseAdaptee();
+                ITargetVietnamese client = new TranslatorVPAdapter( adaptee );
+                client.Send( "Xin chao" );
+            }
+        }
+
+        [Test]
+        public void test_speaker_translator()
+        {
+            {
+                string frenchQuestion = "Comment allez-vous?";
+                string replyFromEnglishMan = new FrenchMan().AskQuestion( frenchQuestion );
+
+                Assert.That( replyFromEnglishMan == "Je suis très bien, merci." );
+            }
+
+            {
+                string englishQuestion = "How are you?";
+                string replyFromFrenchMan = new EnglishMan().AskQuestion( englishQuestion );
+
+                Assert.That( replyFromFrenchMan == "I am fine, thank you." );
+            }
         }
     }
 }

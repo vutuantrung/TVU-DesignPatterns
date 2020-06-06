@@ -1,0 +1,33 @@
+﻿The Flyweight Design Pattern is used when there is a need to create a large number of objects of almost similar nature.
+A large number of objects consumes a large amount of memory and the Flyweight design pattern provides a solution for reducing the load on memory by sharing objects.
+
+This design pattern is basically used to reduce the number of objects created,
+to decrease the memory footprint and increase the overall performance of the application.
+That means this design pattern tries to reduce the already existing similar kind of objects by storing them and create a new object when no matching object is found.
+If this is not clear at the moment then don’t worry, we will try to understand this with an example.
+
+Example: We created and stored one circle object in the Cache.
+
+We can improve the performance by creating the circle object only one time and reuse that circle object many times to create a different type of colors.
+Suppose say you want to create 90000 circle objects with green color,
+then what you can to do is, instead of creating new circle objects every time and fill them with green color,
+you can get the circle object from the cache and fill that object with green color.
+Like that you can create 90000 circle objects with green color.
+So, in this way you can improve the performance of the application.
+
+The different States in the Flyweight Design Pattern:
+
+In the flyweight design pattern, there are two states i.e. Intrinsic and Extrinsic.
+
+Intrinsic (bản chất/nội tại)states are things that are constants and stored in memory.
+Extrinsic (ngoại lai) states are things that are not constant and need to be calculated on the Fly and are therefore not stored in the memory.
+
+In our example, the circle shape is constant (it is not changed).
+That means whether it is a green color circle object and a black color circle object, the shape of the circle object is going to be the same.
+So, it is stored in the memory i.e. in the cache.
+And as it is stored in the memory and as it is constant, it belongs to the intrinsic state.
+
+The Extrinsic state is the color of the circle object i.e. for one circle object the color is black and for other circle objects the color is green.
+The color is not constant and it is calculated on the fly.
+And therefore the color is not stored in the memory.
+As a result, the color belongs to the extrinsic state.
