@@ -1,0 +1,24 @@
+﻿The Composite Design Pattern states that 
+	“Compose objects into tree structures to represent part-whole hierarchies. 
+	 Composite let clients treat individual objects and compositions of objects uniformly”.
+
+The term composite means a thing made of several parts or elements.
+A composite object is an object which contains other objects.
+The point that you need to remember is a composite component may also contain other composite objects.
+The object which does not contain any other objects is simply treated as a leaf object.
+
+The Composite Design Pattern allows us to have a tree structure and ask each node in the tree structure to perform a task.
+That means this pattern creates a tree structure of a group of objects.
+The Composite Pattern is used where we need to treat a group of objects in a similar way as a single unit object.
+
+In simple words, we can say that the composite pattern composes the objects in terms of a tree structure to represent part as well as a whole hierarchy.
+The composite design pattern is used when we need to treat a group of objects in a similar way as a single object.
+
+Composite Pattern là một sự tổng hợp những thành phần có quan hệ với nhau để tạo ra thành phần lớn hơn.
+Nó cho phép thực hiện các tương tác với tất cả đối tượng trong mẫu tương tự nhau.
+
+Composite Pattern được sử dụng khi chúng ta cần xử lý một nhóm đối tượng tương tự theo cách xử lý 1 object.
+Composite pattern sắp xếp các object theo cấu trúc cây để diễn giải 1 phần cũng như toàn bộ hệ thống phân cấp.
+Pattern này tạo một lớp chứa nhóm đối tượng của riêng nó. Lớp này cung cấp các cách để sửa đổi nhóm của cùng 1 object.
+Pattern này cho phép Client có thể viết code giống nhau để tương tác với composite object này,
+bất kể đó là một đối tượng riêng lẻ hay tập hợp các đối tượng.
