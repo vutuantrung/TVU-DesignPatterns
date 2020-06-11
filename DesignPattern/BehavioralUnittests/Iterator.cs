@@ -1,6 +1,7 @@
 ﻿using Iterator.EmployeeIterator.AggregateClass;
 using Iterator.EmployeeIterator.Class;
 using Iterator.EmployeeIterator.IteratorClass;
+using Iterator.Words.CollectionClass;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -108,5 +109,48 @@ namespace BehavioralUnittests
                 Assert.That( employee.ID, Is.EqualTo( 100 ) );
             }
         }
+
+        [Test]
+        public void Test_words()
+        {
+            var collection = new WordsCollection();
+
+            collection.AddItem( "Tuan" );
+            collection.AddItem( "Hello" );
+            collection.AddItem( "First" );
+
+            Assert.That( collection.GetItems().Count == 3 );
+
+            {
+                var iterator = collection.GetEnumerator();
+
+                Assert.That( iterator.Current, Is.EqualTo( "Tuan" ) );
+
+                iterator.MoveNext(); Assert.That( iterator.Current, Is.EqualTo( "Hello" ) );
+                iterator.MoveNext(); Assert.That( iterator.Current, Is.EqualTo( "First" ) );
+
+                iterator.Reset(); Assert.That( iterator.Current, Is.EqualTo( "Tuan" ) );
+                iterator.MoveNext();
+                iterator.MoveNext();
+                Assert.That( iterator.Current, Is.EqualTo( "First" ) );
+            }
+
+            collection.ReserveDirection();
+            {
+                var iterator = collection.GetEnumerator();
+
+                Assert.That( iterator.Current, Is.EqualTo( "First" ) );
+
+                iterator.MoveNext(); Assert.That( iterator.Current, Is.EqualTo( "Hello" ) );
+                iterator.MoveNext(); Assert.That( iterator.Current, Is.EqualTo( "Tuan" ) );
+
+                iterator.Reset(); Assert.That( iterator.Current, Is.EqualTo( "First" ) );
+                iterator.MoveNext();
+                iterator.MoveNext();
+                Assert.That( iterator.Current, Is.EqualTo( "Tuan" ) );
+            }
+           
+        }
+
     }
 }
