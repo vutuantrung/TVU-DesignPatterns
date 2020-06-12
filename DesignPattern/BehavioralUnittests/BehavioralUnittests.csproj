@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Iterator\Iterator.csproj" />
+    <ProjectReference Include="..\Observer\Observer.csproj" />
   </ItemGroup>
 
 </Project>
