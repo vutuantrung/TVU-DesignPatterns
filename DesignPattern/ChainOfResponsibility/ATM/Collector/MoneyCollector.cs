@@ -22,7 +22,19 @@ namespace ChainOfResponsibility.ATM.Collector
 
         public MoneyNote GetMoneyNote( MoneyNoteDenomination moneyNoteDenomination )
         {
-            return _listMoney.First( s => s.Type == moneyNoteDenomination );
+            return _listMoney.FirstOrDefault( s => s.Type == moneyNoteDenomination );
+        }
+
+        public int GetNumberNote()
+        {
+            int total = 0;
+
+            foreach(MoneyNote note in _listMoney )
+            {
+                total += note.Count;
+            }
+
+            return total;
         }
 
         public List<MoneyNote> GetMoneyNoteList() => _listMoney;
