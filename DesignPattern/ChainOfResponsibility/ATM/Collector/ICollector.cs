@@ -12,5 +12,7 @@ namespace ChainOfResponsibility.ATM.Collector
         List<MoneyNote> GetMoneyNoteList();
 
         MoneyNote GetMoneyNote( MoneyNoteDenomination moneyNoteDenomination );
+
+        int GetNumberNote();
     }
 }
