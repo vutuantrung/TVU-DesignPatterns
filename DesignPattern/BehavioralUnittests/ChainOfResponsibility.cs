@@ -1,6 +1,8 @@
 ﻿using ChainOfResponsibility.ATM.ATMChainClass;
 using ChainOfResponsibility.ATM.Collector;
 using ChainOfResponsibility.ATM.Enum;
+using ChainOfResponsibility.Reporting.Class;
+using ChainOfResponsibility.Reporting.Enum;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -207,6 +209,39 @@ namespace BehavioralUnittests
                 MoneyNote one = collection.GetMoneyNote( MoneyNoteDenomination.One );
                 Assert.That( one.Count, Is.EqualTo( 8 ) );
             }
+        }
+
+        [Test]
+        public void Test_reporting()
+        {
+            LeavingRecording recordA = new LeavingRecording { EmployeeName = "Mr.A", IsApproved = false, NumberOfDaysLeave = 9, SectionDecided = SectionType.Developer };
+            LeavingRecording recordB = new LeavingRecording { EmployeeName = "Mss.B", IsApproved = false, NumberOfDaysLeave = 12, SectionDecided = SectionType.Developer };
+            LeavingRecording recordC = new LeavingRecording { EmployeeName = "Mr.C", IsApproved = false, NumberOfDaysLeave = 30, SectionDecided = SectionType.Developer };
+            LeavingRecording recordD = new LeavingRecording { EmployeeName = "Mrs.D", IsApproved = false, NumberOfDaysLeave = 50, SectionDecided = SectionType.Developer };
+            LeavingRecording recordE = new LeavingRecording { EmployeeName = "Mss.E", IsApproved = false, NumberOfDaysLeave = 44, SectionDecided = SectionType.Developer };
+
+            ReportingSection reportingSection = new ReportingSection();
+
+            reportingSection.ApproveLeavingRecord( recordA );
+            reportingSection.ApproveLeavingRecord( recordB );
+            reportingSection.ApproveLeavingRecord( recordC );
+            reportingSection.ApproveLeavingRecord( recordD );
+            reportingSection.ApproveLeavingRecord( recordE );
+
+            Assert.That( recordA.IsApproved, Is.EqualTo( true ) );
+            Assert.That( recordA.SectionDecided, Is.EqualTo( SectionType.TeamLeader ) );
+
+            Assert.That( recordB.IsApproved, Is.EqualTo( true ) );
+            Assert.That( recordB.SectionDecided, Is.EqualTo( SectionType.ProjectLeader ) );
+
+            Assert.That( recordC.IsApproved, Is.EqualTo( true ) );
+            Assert.That( recordC.SectionDecided, Is.EqualTo( SectionType.HR ) );
+
+            Assert.That( recordD.IsApproved, Is.EqualTo( false ) );
+            Assert.That( recordD.SectionDecided, Is.EqualTo( SectionType.HR ) );
+
+            Assert.That( recordE.IsApproved, Is.EqualTo( false ) );
+            Assert.That( recordE.SectionDecided, Is.EqualTo( SectionType.HR ) );
         }
     }
 }
