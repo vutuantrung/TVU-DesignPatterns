@@ -1,0 +1,6 @@
+﻿What is the State Design Pattern?
+
+The State Design Pattern allows an object to alter (thay đổi) its behavior when it’s internal state changes.
+
+In simple words, we can say that the State Pattern is a design pattern that allows an object to completely change its behavior depending upon its current internal state.
+

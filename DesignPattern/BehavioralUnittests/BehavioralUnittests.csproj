@@ -19,6 +19,7 @@
     <ProjectReference Include="..\ChainOfResponsibility\ChainOfResponsibility.csproj" />
     <ProjectReference Include="..\Iterator\Iterator.csproj" />
     <ProjectReference Include="..\Observer\Observer.csproj" />
+    <ProjectReference Include="..\State\State.csproj" />
   </ItemGroup>
 
 </Project>
