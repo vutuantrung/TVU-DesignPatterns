@@ -1,5 +1,8 @@
 ﻿using NUnit.Framework;
 using State.BankCard.Class;
+using State.Demo.Class;
+using State.Demo.ClassState;
+using State.Demo.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -46,6 +49,42 @@ namespace BehavioralUnittests
             {
                 Assert.Throws<ArgumentException>( () => machine.InsertDebitCard( card: cardC ), "Card with this name does not exist in DB." );
             }
+        }
+
+        [Test]
+        public void Test_demo()
+        {
+            Record record = new Record();
+
+            StateA stateA = new StateA();
+            StateB stateB = new StateB();
+
+            DemoContext context = new DemoContext( stateA );
+
+            {
+                context.RequestA( record );
+                Assert.That( record.HandlerType, Is.EqualTo( HandlerType.A ) );
+                Assert.That( record.StateType, Is.EqualTo( StateType.A ) );
+            }
+            {
+                context.RequestB( record );
+                Assert.That( record.HandlerType, Is.EqualTo( HandlerType.B ) );
+                Assert.That( record.StateType, Is.EqualTo( StateType.A ) );
+            }
+
+            context.TransitorTo( stateB );
+
+            {
+                context.RequestA( record );
+                Assert.That( record.HandlerType, Is.EqualTo( HandlerType.A ) );
+                Assert.That( record.StateType, Is.EqualTo( StateType.B ) );
+            }
+            {
+                context.RequestB( record );
+                Assert.That( record.HandlerType, Is.EqualTo( HandlerType.B ) );
+                Assert.That( record.StateType, Is.EqualTo( StateType.B ) );
+            }
+
         }
     }
 }
