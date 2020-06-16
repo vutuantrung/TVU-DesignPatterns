@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Iterator\Iterator.csproj" />
     <ProjectReference Include="..\Observer\Observer.csproj" />
     <ProjectReference Include="..\State\State.csproj" />
+    <ProjectReference Include="..\TemplateMethod\TemplateMethod.csproj" />
   </ItemGroup>
 
 </Project>
