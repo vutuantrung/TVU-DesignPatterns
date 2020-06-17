@@ -1,4 +1,7 @@
-﻿using Command.Document.Command;
+﻿using Command.Account.Command;
+using Command.Account.Invoker;
+using Command.Account.Receiver;
+using Command.Document.Command;
 using Command.Document.Invoker;
 using Command.Document.Receiver;
 using NUnit.Framework;
@@ -16,9 +19,9 @@ namespace BehavioralUnittests
         {
             DocumentReceiver receiver = new DocumentReceiver();
 
-            ICommand openCommand = new OpenCommand( receiver );
-            ICommand closeCommand = new CloseCommand( receiver );
-            ICommand saveCommand = new SaveCommand( receiver );
+            ICommandDocument openCommand = new OpenCommand( receiver );
+            ICommandDocument closeCommand = new CloseCommand( receiver );
+            ICommandDocument saveCommand = new SaveCommand( receiver );
 
             MenuOption menu = new MenuOption
             ( 
@@ -30,6 +33,24 @@ namespace BehavioralUnittests
             menu.OpenClick();
             menu.SaveClick();
             menu.CloseClick();
+        }
+
+        [Test]
+        public void Test_Account()
+        {
+            AccountReceiver receiver = new AccountReceiver( "Tuan Trung" );
+
+            ICommandAccount openAccount = new OpenAccount( receiver );
+            ICommandAccount closeAccount = new CloseAccount( receiver );
+
+            BankApp bankApp = new BankApp
+            ( 
+                openAccount: openAccount, 
+                closeAccount: closeAccount 
+            );
+
+            bankApp.OpenAccount();
+            bankApp.CloseAccount();
         }
     }
 }
