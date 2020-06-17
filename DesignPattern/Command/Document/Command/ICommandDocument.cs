@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Command.Document.Command
 {
-    public interface ICommand
+    public interface ICommandDocument
     {
         void Execute();
     }
