@@ -1,0 +1,30 @@
+﻿The Command Design Pattern is used to encapsulate a request as an object (i.e. a command) and pass to an invoker,
+wherein the invoker does now knows how to service the request but uses the encapsulated command to perform an action.
+
+The command object has the request (i.e. what to do?).
+It also has receiver object reference.
+The receiver object is nothing but the object which will handle the request.
+The command object also has the Execute method.
+The execute method will call the receiver object method and the receiver object method will handle the request.
+
+As per the command design pattern, the command object will be passed to the invoker object.
+The Invoker does not know how to handle the request.
+What the invoker will do is, it will call the Execute method of the command object.
+The execute method of command object will call the receiver object method and the receiver object method will perform the necessary action to handle the request.
+For better understanding please have a look at the following diagram.
+
+This is how the command design pattern works.
+
+To make you better understand the command design pattern, I have taken the example of a restaurant.
+In a restaurant, the waiter will be there.
+What the waiter will do is, the waiter will take an order from the customer.
+The customer will tell what kind of food he/she wants to the waiter.
+The waiter will note it down on a checklist.
+Then the waiter passes the checklist to the cook.
+The cook is the one who will prepare food and given it back to the waiter and the waiter will give it back to the customer.
+
+In this example, the customer is the client.
+Order i.e. what kind of food the customer wants is the Command.
+The waiter is the invoker.
+The Waiter does not know how to cook the food.
+So, the waiter just passes the request to the receiver i.e. the Cook who will prepare the food and given the food back to the waiter and the waiter gave it back to the customer.
