@@ -7,6 +7,7 @@ using Visitor.School.SchoolVisitor;
 
 namespace Visitor.School.Class
 {
+    // This is a class that holds all the elements (i.e. a collection of kids) and provides a high-level interface that allows the visitor to visit all the elements.
     public class School
     {
         private List<IElementSchool> _kids = new List<IElementSchool>();
