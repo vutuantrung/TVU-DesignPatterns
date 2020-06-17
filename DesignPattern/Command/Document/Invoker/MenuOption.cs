@@ -7,11 +7,11 @@ namespace Command.Document.Invoker
 {
     public class MenuOption
     {
-        private ICommand _openCommand;
-        private ICommand _saveCommand;
-        private ICommand _closeCommand;
+        private ICommandDocument _openCommand;
+        private ICommandDocument _saveCommand;
+        private ICommandDocument _closeCommand;
 
-        public MenuOption( ICommand openCommand, ICommand saveCommand, ICommand closeCommand )
+        public MenuOption( ICommandDocument openCommand, ICommandDocument saveCommand, ICommandDocument closeCommand )
         {
             _openCommand = openCommand;
             _saveCommand = saveCommand;

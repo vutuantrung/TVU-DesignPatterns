@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Command.Document.Command
 {
-    public class SaveCommand : ICommand
+    public class SaveCommand : ICommandDocument
     {
         private DocumentReceiver _receiver;
 
