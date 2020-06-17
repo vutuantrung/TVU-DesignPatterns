@@ -6,6 +6,8 @@ using Visitor.School.SchoolElement;
 
 namespace Visitor.School.SchoolVisitor
 {
+    // These are the subclasses that implement each operation declared by the IVisitor interface.
+    // Each operation implements a fragment of the algorithm defined for the corresponding class or object in the structure.
     public class Doctor : IVisitorSchool
     {
         public string Name { get; set; }

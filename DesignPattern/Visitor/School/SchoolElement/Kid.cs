@@ -6,6 +6,7 @@ using Visitor.School.SchoolVisitor;
 
 namespace Visitor.School.SchoolElement
 {
+    // This is a class that implements the Element (i.e. IElement) interface i.e. this class implements the Accept operation that takes a visitor as an argument.
     public class Kid : IElementSchool
     {
         public string Name { get; set; }
