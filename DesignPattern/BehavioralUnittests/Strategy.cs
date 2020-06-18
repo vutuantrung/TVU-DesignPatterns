@@ -2,6 +2,8 @@
 using Strategy.Compression.Class;
 using Strategy.Compression.Enum;
 using Strategy.Compression.StrategyCompression;
+using Strategy.Shopping.Class;
+using Strategy.Shopping.StrategyShopping;
 using Strategy.Travel.Class;
 using Strategy.Travel.StrategyTravel;
 using System;
@@ -68,5 +70,22 @@ namespace BehavioralUnittests
                 Assert.That( client.Money, Is.EqualTo( 650 ) );
             }
         }
+
+        [Test]
+        public void Test_Payment()
+        {
+            IPaymentStrategy paymentStrategy = new DebitCardPaymentStrategy();
+            PaymentContext paymentContext = new PaymentContext( paymentStrategy );
+            paymentContext.Pay( 135.1 );
+
+            paymentStrategy = new CashCardPaymentStrategy();
+            paymentContext.SetPaymentStrategy( paymentStrategy );
+            paymentContext.Pay( 57.1 );
+
+            paymentStrategy = new CreditCardPaymentStrategy();
+            paymentContext.SetPaymentStrategy( paymentStrategy );
+            paymentContext.Pay( 45.96 );
+        }
+
     }
 }
