@@ -1,8 +1,11 @@
 ﻿using Mediator.ChattingGroup.Class;
 using Mediator.ChattingGroup.MediatorFacebook;
+using Mediator.Demo.Class;
+using Mediator.Demo.MediatorDemo;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace BehavioralUnittests
@@ -44,6 +47,20 @@ namespace BehavioralUnittests
             userB.SendMessageToInstagram( "This is msg from userB" );
 
             Assert.Throws<ArgumentNullException>( () => { userE.SendMessageToInstagram( "This is msg from userA" ); }, "This user does not participate in this instagram group.  (Parameter '_mediatorInstagram')" );
+        }
+        
+        [Test]
+        public void Test_Demo()
+        {
+            ConcreteComponentA componentA = new ConcreteComponentA();
+            ConcreteComponentB componentB = new ConcreteComponentB();
+
+            IMediator mediator = new ConcreteMediator( componentA, componentB );
+
+            componentA.ExecutingA();
+            componentA.ExecutingB();
+            componentB.ExecutingA();
+            componentB.ExecutingB();
         }
 
     }
