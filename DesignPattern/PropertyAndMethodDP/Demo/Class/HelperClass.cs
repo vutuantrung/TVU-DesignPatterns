@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PropertyAndMethodDI.PropertyDemo.Class
+namespace PropertyAndMethodDI.Demo.Class
 {
     public static class HelperClass
     {
