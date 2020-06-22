@@ -1,0 +1,34 @@
+﻿* What is the Mediator Design Pattern?
+
+define an object that encapsulates how a set of objects interact.
+Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+
+The Mediator Design Pattern is used to reduce the communication complexity between multiple objects.
+This design pattern provides a mediator object and that mediator object normally handles all the communication complexities between different objects.
+
+The Mediator object acts as the communication center for all objects.
+That means when an object needs to communicate to another object, then it does not call the other object directly,
+instead, it calls the mediator object and it is the responsibility of the mediator object to route the message to the destination object.
+
+* Why do we need the Mediator Pattern in C#?
+
+In order to understand this, please have a look at the following diagram(https://dotnettutorials.net/lesson/mediator-design-pattern/)
+As you can see in the below image, we have four objects (Object A, Object B, Object C, and Object D).
+And these four objects want to communicate with each other.
+Suppose, Object A wants communicate with Object B, then Object A should know the reference of Object B and using that reference Object A can call the method of Object B.
+Similarly, if Object B wants to send some message to Object C, then it should know the reference of Object C and using that reference it will call the methods of Object C and sends the message.
+
+The couplings between the objects are more i.e. tight coupling.
+A lot of object knows each other.
+Now in the above image four objects are there.
+In real-time you have thousands of objects and those thousands of objects want to communicate with each other.
+Then writing code and maintainability of code is very difficult.
+
+* How do we reduce the coupling between the objects or how to solve the above problem?
+
+Using Mediator Design Pattern we can solve the above problem.
+To understand this, please have a look at the following diagram.
+As you can see in the below image, here we can introduce the Mediator object.
+Each object has to send messages to the mediator object.
+What the mediator object do here is, it will receive the message from each object and route that message to the destination object.
+So, the mediator object will take care of handling the messages. So, in this type of scenarios, we can use the Mediator Design Pattern.
