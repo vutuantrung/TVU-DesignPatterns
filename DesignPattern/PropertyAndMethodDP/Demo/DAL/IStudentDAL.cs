@@ -1,9 +1,9 @@
-﻿using PropertyAndMethodDI.PropertyDemo.Class;
+﻿using PropertyAndMethodDI.Demo.Class;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace PropertyAndMethodDI.PropertyDemo.DAL
+namespace PropertyAndMethodDI.Demo.DAL
 {
     public interface IStudentDAL
     {
