@@ -15,3 +15,25 @@ Now I need to create a new method within the same class but that new method now 
 If we use the constructor dependency injection here, then we need to change all the existing constructor calls where we created this class object.
 This can be a very difficult task if the project is a big one.
 Hence, in such scenarios, the Setter or Property Dependency Injection can be a good choice.
+
+*What is Method Dependency Injection in C#?
+
+In Method Dependency Injection, we need to supply the dependency object through a public method of the client class.
+Let us see an example to understand how we can implement the Method dependency injection in C#.
+
+*When to use Method Dependency Injection
+
+We need to use the Method Dependency Injection in C# when the entire class does not depend on the dependency object but a single method of that class depends on the dependency object.
+
+*What are the advantages of using Dependency Injection in C#?
+
+1.The Dependency Injection Design Pattern allows us to develop loosely coupled software components.
+2.Using Dependency Injection, it is very easy to swap with a different implementation of a component, as long as the new component implements the interface type.
+
+*Dependency Injection Container:
+
+There are a lot of Dependency Injection Containers are available in the market which implements the dependency injection design pattern.
+1.Unity
+2.Castle Windsor
+3.StructureMap
+4.Spring.NET
