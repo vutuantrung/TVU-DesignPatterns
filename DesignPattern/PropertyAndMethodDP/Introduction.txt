@@ -1,0 +1,4 @@
+﻿What is Property Dependency Injection in C#?
+
+In Property Dependency Injection (DI), we need to supply the dependency object through a public property of the client class.
+Let us see an example to understand how we can implement the Property or you can say setter DI in C#.
