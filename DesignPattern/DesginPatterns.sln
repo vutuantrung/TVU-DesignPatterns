@@ -75,9 +75,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "Depe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unittest", "Unittest", "{D0B0E5CE-BF82-405D-9408-0557069D4A7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionUnittests", "DependencyInjectionUnittests\DependencyInjectionUnittests.csproj", "{9BED32B8-83CF-47FC-AD59-8CEA775D87D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionUnittests", "DependencyInjectionUnittests\DependencyInjectionUnittests.csproj", "{9BED32B8-83CF-47FC-AD59-8CEA775D87D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionDemo", "DependencyInjectionDemo\DependencyInjectionDemo.csproj", "{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionDemo", "DependencyInjectionDemo\DependencyInjectionDemo.csproj", "{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertyAndMethodDI", "PropertyAndMethodDP\PropertyAndMethodDI.csproj", "{A9EAD7AB-13ED-4306-B174-84458FE6F45A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,6 +207,10 @@ Global
 		{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EAD7AB-13ED-4306-B174-84458FE6F45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EAD7AB-13ED-4306-B174-84458FE6F45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EAD7AB-13ED-4306-B174-84458FE6F45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EAD7AB-13ED-4306-B174-84458FE6F45A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -244,6 +250,7 @@ Global
 		{D0B0E5CE-BF82-405D-9408-0557069D4A7E} = {55882E2D-B774-43E1-8873-E1BD544E65CF}
 		{9BED32B8-83CF-47FC-AD59-8CEA775D87D9} = {D0B0E5CE-BF82-405D-9408-0557069D4A7E}
 		{C8372F40-CA36-4AC7-87B8-EAA2BBCDCD92} = {55882E2D-B774-43E1-8873-E1BD544E65CF}
+		{A9EAD7AB-13ED-4306-B174-84458FE6F45A} = {55882E2D-B774-43E1-8873-E1BD544E65CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {011C51D4-4070-4E61-85E1-EF85B9AAFFCE}
