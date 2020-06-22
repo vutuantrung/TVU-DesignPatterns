@@ -1,0 +1,28 @@
+﻿The Observer design Pattern should “Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically”.
+
+The Observer Design Pattern is a Software Design Pattern in which an object (called as Subject) maintains a list of its dependents (called as Observers) 
+and notifies them automatically whenever any state changes by calling one of their methods.
+
+The Observer Design Pattern defines a one-to-many dependency between objects so that when one objects state changes,
+all its dependents are notified and updated automatically.
+
+The other names of this pattern are Producer/Consumer, Publish/Subscribe.
+
+How does the Observer Design Pattern work?
+
+The observer design pattern is having two main components. They are as follows :
+	1. Subject : They are the publishers.
+		When a change occurs to a subject it should notify all of its subscribers.
+	2. Observers : They are the subscribers.
+		They simply listen to the changes in the subjects. 
+		Another name of the Observer is the Listener.
+		Please have a look at the following diagram.
+
+Subject as an object which maintains a list of observers.The Subject having methods to Register and Unregister the observers.
+If any new observer wants to register then he/she needs to call the Register method of the Subject.
+Again if any observer wants to unregister then he/she simply needs to call the Unregister method of the subject.
+
+The subject has some state.
+Whenever there are some changes occurred in the state, then the subject will notify all the observers which are registered in the subject by calling one of the observer methods.
+
+Once the observer gets the notification from the subject, it will call one of the methods of the subject to get the change state data.

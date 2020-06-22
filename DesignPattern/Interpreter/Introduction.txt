@@ -1,0 +1,15 @@
+﻿What is the Interpreter Design Pattern?
+
+The Interpreter Design Pattern Provides a way to evaluate language grammar or expression.
+This pattern is used in SQL parsing, symbol processing engine, etc.
+
+Let us understand the interpreter design pattern with an example.
+On the left-hand side, you can see the Context. 
+The Context is nothing but the value that we want to interpret. 
+Here, the context value is the current date. 
+On the right-hand side, you can see the Date expression or you can say the grammar.
+We have different types of date expression such as (MM-DD-YYYY, DD-MM-YYYY, YYYY-MM-DD, and DD-YYYY).
+
+Suppose, you want the date in MM-DD-YYYY format then what you need to do is, you need to pass the Context value and the Date Expression you want (i.e. MM-DD-YYYY) to the interpreter.
+What the interpreter will do is, it will convert the context value into the date expression format you passed to it.
+So, basically the interpreter contains the logic or grammar to convert the context object into a specific readable format.

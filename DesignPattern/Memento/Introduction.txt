@@ -1,0 +1,43 @@
+﻿What is the Memento Design Pattern?
+
+The Memento Design Pattern is used to restore an object to its previous state.
+That means if you want to perform some kind of undo or rollback operation in your application then you need to use the Memento Design Pattern.
+
+Let us understand the Memento Design Pattern with an example.
+Please have a look at the following image. (https://dotnettutorials.net/lesson/memento-design-pattern/)
+As shown in the left-hand side of the image, we have an employee with 
+		Id = 101,
+		Name = John,
+		Salary = 2Lakhs,
+		Designation = Software Engineer,
+		Address = London,
+		and many more attributes.
+Later some point in time we did change some of the properties 
+(Salary => 3Lakhs, Designation => Senior Software Engineer, like this we also change some other attributes) of employee which is shown in the right-hand side of the below image.
+That means we change the object state from State 1 to State 2.
+
+Later some point in time, we think that let’s undo or rollback the employee information to its previous state i.e. State 1.
+If this is your requirement then you need to use the Memento Design Pattern and rollback the employee information to its previous state.
+
+Understanding the Class Diagram of the Memento Design Pattern:
+
+Let us understand the class diagram and the different components involved in the Memento Design Pattern.
+In order to understand the class diagram please have a look at the following diagram.
+
+As you can see in the below image, there are three important classes: Originator, Memento, and Caretaker involved in the memento design pattern.
+You can see the state in both Originator and Memento classes.
+
+The Originator class has two methods.
+One is CreateMemento and the other one is SetMemento.
+The SetMemento method accepts the memento object.
+So, what this Originator class will do is, it will instantiate the Memento object and set the internal state of the originator to memento state.
+So, basically what the originator will do is, it will take a snapshot of the originator and put it on the memento object.
+And that memento object will save into the Caretaker for later use.
+
+Later use means, suppose at a later point of time, originator wants to restore its state then at that time it will take the old state from the caretaker and set it in the originator state so that the originator can restore its old state.
+
+_Originator: It creates a memento containing a snapshot of its current internal state and uses the memento to restore its internal state.
+_Memento: It holds the internal state of an Originator.
+_Caretaker: It is responsible for keeping the mementos. Like maintaining save points and never operates on or examine the contents of a memento.
+
+If this is not clear at the moment, then don’t worry once we implement one programming example, so that you can easily understand this design pattern.

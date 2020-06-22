@@ -1,0 +1,37 @@
+﻿What is Chain of Responsibility Design Pattern?
+
+Avoid coupling the sender of a request to its receiver by giving more than one receiver object a chance to handle the request.
+Chain the receiving objects and pass the request along the chain until an object handle it.
+
+In simple words, we can say that the chain of responsibility design pattern creates a chain of receiver objects for a given request.
+
+In this design pattern, normally each receiver contains a reference to another receiver.
+If one receiver cannot handle the request then it passes the same request to the next receiver and so on.
+
+One receiver handles the request in the chain or one or more receivers handle the request.
+
+Understanding the Chain of Responsibility Design Pattern:
+
+Here the client sends the request to the Chain of Receivers.
+In the chain of receivers, the first receiver is Receiver 1.
+So, the request will come to Receiver 1 and the receiver 1 will check whether it can handle the request or not.
+If it can handle the request then it will handle the request and then check whether further processing is needed for the request or not.
+If further processing is needed then it will send the request to the next receiver (i.e. Receiver 2) in the chain of receivers.
+If the request does not need any further processing then it will not pass the request to the next receiver.
+
+The receiver 2 will then check whether it can handle the request or not.
+If it can handle the request then it will handle the request and then check whether further processing is needed or not.
+If further processing is needed then it will send the request to the next receiver (i.e. Receiver 2).
+If it won’t need further processing then it will not pass the request to the next receiver.
+In this way, the chain of responsibility works.
+
+Example:
+ToRung wants to withdraw 4600 dolars from the ATM machine.
+So, what the ATM machine here will do is, send the request to the first handler i.e. the TwoThousandHandler and the TwoThousandHandler will check the amount and give two 2000 dolars note and then the remaining is 600 dolars.
+So, the TwoThousandHandler will send the request to the FiveHundredHandler and the FiveHundredHandler will check the remaining amount and will give one 500 dolars not and the remaining is 100 dolars.
+So, the FiveHundredHandler will forward the request to the next handler i.e.
+TwoHundredHandler and the TwoHundredHandler will check the remaining amount which is 100.
+So, it can’t handle the request and it simply forwards the request to the next handler which is HundredHandler.
+The HundredHandler check the remaining amount which is 100 and will give one 100 dolars note.
+In this way, it will handle the request and provide 4600 (2 * 2000, 1*500, and 1*100) to ToRung.
+This is one of the best examples of one or more receivers in the chain handle the request.
