@@ -1,4 +1,6 @@
-﻿using Memento.LEDTV.Caretaker;
+﻿using Memento.Demo.Caretaker;
+using Memento.Demo.Originator;
+using Memento.LEDTV.Caretaker;
 using Memento.LEDTV.Class;
 using Memento.LEDTV.Memento;
 using Memento.LEDTV.Originator;
@@ -39,6 +41,36 @@ namespace BehavioralUnittests
             storeRoom.AddMemento( mementoLEDTV35 );
             // Set new TVLED
             originator.TVLED = tvLED50;
+        }
+
+        [Test]
+        public void Test_Demo()
+        {
+            OriginatorDemo originator = new OriginatorDemo( $"State at { DateTime.Now.ToShortTimeString() }" );
+
+            CaretakerDemo caretaker = new CaretakerDemo( originator );
+
+            caretaker.BackUp();
+            originator.DoSomething();
+
+            caretaker.BackUp();
+            originator.DoSomething();
+
+            caretaker.BackUp();
+            originator.DoSomething();
+
+            caretaker.BackUp();
+            originator.DoSomething();
+
+            Console.WriteLine();
+            caretaker.ShowHistory();
+
+            Console.WriteLine();
+            caretaker.Undo();
+            caretaker.Undo();
+            Console.WriteLine( "After undo 2 times." );
+
+            caretaker.DisplayTheLastState();
         }
     }
 }
