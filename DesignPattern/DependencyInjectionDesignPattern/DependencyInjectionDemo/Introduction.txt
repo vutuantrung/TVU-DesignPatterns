@@ -1,0 +1,37 @@
+﻿*Why do we need the Dependency Injection in C#?
+
+The Dependency Injection is a design pattern that allows us to develop loosely coupled software components.
+In other words, we can say that this design pattern is used to reduce the tight coupling between the software components.
+As a result, we can easily manage future changes and other complexity in our application.
+
+*What is Tight Coupling in Software Design?
+
+Tight coupling means classes and objects are dependent on each other.
+That means when a class is dependent on another concrete class, then it is said to be a tight coupling between these two classes.
+In that case, if we change the dependent object, then we also need to change the classes where this dependent object is used.
+If your application is a small one, then it is not that difficult to handle,
+but if you have a big enterprise-level application, then its really very difficult to handle to make these changes.
+
+*What is Loose Coupling in Software Design?
+
+Loosely coupling means two objects are independent of each other.
+That means if we change one object then it will not affect another object.
+The loosely coupled nature of software development allows us to manage future changes easily and also allows us to manage the complexity of the application.
+
+
+*What is Dependency Injection Design Pattern in C#?
+
+The Dependency Injection Design Pattern in C# is a process in which we are injecting the object of a class into a class that depends on that object.
+The Dependency Injection Design Pattern is the most commonly used design pattern nowadays to remove the dependencies between the objects.
+
+*Different Types of Dependency Injection in C#?
+
+We can implement the Dependency Injection in C# in three different ways:
+
+_Constructor Injection: When we supply the dependency object through the client class constructor, then it is called as Constructor Injection.
+_Property Injection: When we supply the dependency object through the public property of the client class, then it is called as Property Injection.
+_Method Injection: When we supply the dependency object through a public method of the client class, then it is called as Method Injection.
+
+*Advantages of Constructor Dependency Injection
+1.The Constructor Dependency Injection Design Pattern makes a strong dependency contract
+2.This design pattern support testing as the dependencies are passed through the constructor.
